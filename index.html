@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hindustan Review</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-gray-700 font-sans leading-relaxed">
+
+     <!-- Navigation -->
+    <nav class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-3 shrink-0">
+                    <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-sm tracking-wide">THR</div>
+                    <span class="text-lg font-semibold tracking-tight hidden sm:inline">The Hindustan Reviewer</span>
+                </a>
+                <div class="hidden lg:flex items-center gap-1 text-sm">
+                    <a href="index.html" class="px-3 py-2 rounded hover:bg-white/10 transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded hover:bg-white/10 transition">About</a>
+                    <a href="journals.html" class="px-3 py-2 rounded hover:bg-white/10 transition">Journals</a>
+                    <a href="editorial.html" class="px-3 py-2 rounded hover:bg-white/10 transition">Editorial Board</a>
+                    <a href="guidelines.html" class="px-3 py-2 rounded bg-white/10 transition">Guidelines & Policies</a>
+                    <a href="contact.html" class="px-3 py-2 rounded hover:bg-white/10 transition">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded hover:bg-white/10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 pb-3">
+            <div class="max-w-7xl mx-auto px-4 space-y-1 text-sm">
+                <a href="index.html" class="block px-3 py-2 rounded hover:bg-white/10">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded hover:bg-white/10">About</a>
+                <a href="journals.html" class="block px-3 py-2 rounded hover:bg-white/10">Journals</a>
+                <a href="editorial.html" class="block px-3 py-2 rounded hover:bg-white/10">Editorial Board</a>
+                <a href="guidelines.html" class="block px-3 py-2 rounded hover:bg-white/10">Guidelines & Policies</a>
+                <a href="contact.html" class="block px-3 py-2 rounded hover:bg-white/10">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-blue-900 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-300 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6">
+                The Hindustan<br><span class="text-blue-300">Review</span>
+            </h1>
+            <p class="text-xl text-blue-100 max-w-2xl mx-auto">Advancing Knowledge in Humanities, Social Sciences & Natural Sciences</p>
+            
+            <a href="journals.html" class="mt-10 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-medium px-8 py-4 rounded-xl transition shadow-lg shadow-blue-600/30 text-lg">
+                Browse Journals →
+            </a>
+        </div>
+    </section>
+
+    <!-- Journals Showcase with Full Cover Images -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Our Publications</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-2">Featured Journals</h2>
+                <p class="text-gray-500 mt-3 max-w-xl mx-auto">Peer-reviewed, open-access journals dedicated to academic excellence</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                
+                <!-- The Hindustan Review -->
+                <div class="bg-white rounded-3xl shadow-sm overflow-hidden hover:shadow-xl transition group">
+                    <div class="aspect-[3/4] bg-gray-100 relative flex items-center justify-center border-b">
+                        <img src="images/thr-cover.jpg" 
+                             alt="The Hindustan Review Journal Cover"
+                             class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 text-blue-700 text-xs font-bold px-3 py-1 rounded-full shadow">
+                            Humanities &amp; Social Sciences
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">The Hindustan Review</h3>
+                        <p class="text-gray-600 text-[0.95rem] leading-relaxed">
+                            A multidisciplinary journal exploring Indian culture, Buddhist studies, history, politics, literature, and social issues.
+                        </p>
+                        <a href="journals.html#humanities" 
+                           class="mt-6 inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium">
+                            View All Issues →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Natural Science Today -->
+                <div class="bg-white rounded-3xl shadow-sm overflow-hidden hover:shadow-xl transition group">
+                    <div class="aspect-[3/4] bg-gray-100 relative flex items-center justify-center border-b">
+                        <img src="images/nst-cover.jpg" 
+                             alt="Natural Science Today Journal Cover"
+                             class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full shadow">
+                            Natural Sciences
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Natural Science Today</h3>
+                        <p class="text-gray-600 text-[0.95rem] leading-relaxed">
+                            Cutting-edge research in Physics, Chemistry, Biology, Environmental Science, Mathematics &amp; allied fields.
+                        </p>
+                        <a href="journals.html#science" 
+                           class="mt-6 inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium">
+                            View All Issues →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-3 gap-8 text-sm">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-xs">THR</div>
+                        <span class="font-semibold text-lg">The Hindustan Review - Natural Science Today</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">A peer-reviewed, open-access academic publisher advancing research across Science and the Humanities.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4 text-gray-200 uppercase tracking-wider text-xs">Quick Links</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <a href="index.html" class="block hover:text-white transition">Home</a>
+                        <a href="about.html" class="block hover:text-white transition">About Us</a>
+                        <a href="journals.html" class="block hover:text-white transition">Journals</a>
+                        <a href="editorial.html" class="block hover:text-white transition">Editorial Board</a>
+                        <a href="guidelines.html" class="block hover:text-white transition">Guidelines & Policies</a>
+                        <a href="contact.html" class="block hover:text-white transition">Contact Us</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4 text-gray-200 uppercase tracking-wider text-xs">Get in Touch</h4>
+                    <div class="space-y-4 text-gray-400">
+                        <div class="flex gap-3">
+                            <svg class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <span>BCARDS, Back of H.P. Yadav House, Near Kacchi Talab, Saristabad Road, Gardanibagh, Patna - 800001</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <svg class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <div>
+                                <a href="tel:+919835291474" class="hover:text-white transition block">+91-9835291474</a>
+                                <a href="tel:+919334647626" class="hover:text-white transition block">+91-9334647626</a>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <svg class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <a href="mailto:reviewhindustan51@gmail.com" class="hover:text-white transition">reviewhindustan51@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-8 pt-6 text-center text-xs text-gray-500">
+                &copy; 2026 The Hindustan Review - Natural Science Today. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
