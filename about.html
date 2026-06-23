@@ -3,55 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us — The Hindustan Review</title>
+    <title>About Us — BCARDS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        .font-cormorant { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
+        
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            border-bottom: 4px solid #d97706;
+            color: #92400e;
+            font-weight: 700;
+        }
+        .tab-content {
+            animation: fadeIn 0.4s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body class="bg-white text-gray-700 font-sans leading-relaxed">
 
-     <!-- Navigation -->
-    <nav class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <a href="index.html" class="flex items-center gap-3 shrink-0">
-                    <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-sm tracking-wide">THR</div>
-                    <span class="text-lg font-semibold tracking-tight hidden sm:inline">The Hindustan Review</span>
-                </a>
-                <div class="hidden lg:flex items-center gap-1 text-sm">
-                    <a href="index.html" class="px-3 py-2 rounded hover:bg-white/10 transition">Home</a>
-                    <a href="about.html" class="px-3 py-2 rounded hover:bg-white/10 transition">About</a>
-                    <a href="journals.html" class="px-3 py-2 rounded hover:bg-white/10 transition">Journals</a>
-                    <a href="editorial.html" class="px-3 py-2 rounded hover:bg-white/10 transition">Editorial Board</a>
-                    <a href="guidelines.html" class="px-3 py-2 rounded bg-white/10 transition">Guidelines & Policies</a>
-                    <a href="contact.html" class="px-3 py-2 rounded hover:bg-white/10 transition">Contact</a>
+   <!-- ============================================================ -->
+<!--  NAVIGATION - Clean & Compact                                -->
+<!-- ============================================================ -->
+<nav class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            
+            <!-- Brand -->
+            <a href="index.html" class="flex items-center gap-3.5 shrink-0">
+                <div class="w-9 h-9 rounded-2xl bg-amber-600 flex items-center justify-center font-bold text-2xl text-white shadow-inner">
+                    B
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded hover:bg-white/10">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 pb-3">
-            <div class="max-w-7xl mx-auto px-4 space-y-1 text-sm">
-                <a href="index.html" class="block px-3 py-2 rounded hover:bg-white/10">Home</a>
-                <a href="about.html" class="block px-3 py-2 rounded hover:bg-white/10">About</a>
-                <a href="journals.html" class="block px-3 py-2 rounded hover:bg-white/10">Journals</a>
-                <a href="editorial.html" class="block px-3 py-2 rounded hover:bg-white/10">Editorial Board</a>
-                <a href="guidelines.html" class="block px-3 py-2 rounded hover:bg-white/10">Guidelines & Policies</a>
-                <a href="contact.html" class="block px-3 py-2 rounded hover:bg-white/10">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">About Us</span>
-            <div class="prose prose-lg text-gray-700 leading-relaxed space-y-20">
-
-
-                <!-- The Hindustan Review Section -->
                 <div>
-                    <h2 class="text-2xl font-semibold text-gray-900 border-b border-blue-200 pb-3">The Hindustan Review</h2>
-                    <div class="mt-6 space-y-6">
+                    <div class="text-xl font-bold tracking-tight text-amber-100">BCARDS</div>
+                    <div class="text-[10px] text-amber-400 tracking-widest -mt-0.5">Buddhist Centre for Action Research</div>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-1 text-[15px] font-medium">
+                <a href="index.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Home</a>
+                <a href="about.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">About</a>
+                <a href="mission.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Mission & Vision</a>
+                <a href="activities.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Activities & Objectives</a>
+                <a href="journals.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Journals</a>
+                <a href="editorial.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Editorial Board</a>
+                <a href="guidelines.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Guidelines</a>
+                <a href="contact.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden p-3 rounded-2xl hover:bg-white/10 transition">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 pb-6">
+        <div class="max-w-7xl mx-auto px-4 space-y-1 text-base">
+            <a href="index.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Home</a>
+            <a href="about.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">About</a>
+            <a href="mission.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Mission & Vision</a>
+            <a href="activities.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Activities & Objectives</a>
+            <a href="journals.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Journals</a>
+            <a href="editorial.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Editorial Board</a>
+            <a href="guidelines.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Guidelines & Policies</a>
+            <a href="contact.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Contact</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- PAGE HEADER -->
+    <section class="pt-20 pb-16 bg-gradient-to-b from-amber-50 to-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Discover BCARDS</span>
+            <h1 class="font-cormorant text-5xl md:text-6xl font-bold text-gray-900 mt-3">About Us</h1>
+        </div>
+    </section>
+
+    <!-- TABS -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div class="flex border-b border-gray-200 mb-12 overflow-x-auto">
+            <button onclick="switchTab(0)" id="tab0" 
+                    class="tab-button active px-8 py-5 text-lg font-medium whitespace-nowrap">About BCARDS</button>
+            <button onclick="switchTab(1)" id="tab1" 
+                    class="tab-button px-8 py-5 text-lg font-medium whitespace-nowrap">The Hindustan Review</button>
+            <button onclick="switchTab(2)" id="tab2" 
+                    class="tab-button px-8 py-5 text-lg font-medium whitespace-nowrap">Natural Science Today</button>
+        </div>
+
+        <!-- Tab 1: About BCARDS -->
+<div id="content0" class="tab-content">
+    <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+        
+        <p>
+            The Buddhist Centre for Action Research and Development Studies (BCARDS) is a registered academic and research institution dedicated to promoting high-quality multidisciplinary research rooted in Indian and Buddhist knowledge traditions.
+        </p>
+        <p>
+            Established with the vision of bridging ancient wisdom and contemporary scholarship, BCARDS serves as a platform for meaningful academic discourse across humanities, social sciences, and natural sciences.
+        </p>
+
+        <!-- Society Information -->
+        <div class="my-12 grid md:grid-cols-3 gap-6">
+            
+            <!-- Name of the Society -->
+            <div class="md:col-span-3 bg-amber-50 border-l-4 border-amber-600 p-8 rounded-r-2xl">
+                <h3 class="font-semibold text-amber-900 mb-3">Name of the Society</h3>
+                <p class="text-2xl font-semibold">"BUDDHIST CENTRE FOR ACTION RESEARCH AND DEVELOPMENT STUDIES"</p>
+            </div>
+
+            <!-- Registered Office -->
+            <div class="bg-white border border-gray-200 p-7 rounded-2xl">
+                <h3 class="font-semibold text-gray-900 mb-4">Registered Office</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    National Capital Territory of Delhi<br><br>
+                    <strong>C/15, Staff Quarters,<br>
+                    I.D. Hospital, Kingsway Camp,<br>
+                    Delhi-110009, INDIA.</strong>
+                </p>
+            </div>
+
+            <!-- Head Office -->
+            <div class="bg-white border border-gray-200 p-7 rounded-2xl md:col-span-2">
+                <h3 class="font-semibold text-gray-900 mb-4">Head Office</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Patna, Bihar<br><br>
+                    <strong>1A/4, New Patliputra Colony,<br>
+                    Patna - 800013 (Bihar), INDIA.</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- Registration Details -->
+        <div class="bg-amber-50 border-l-4 border-amber-600 p-8 rounded-r-2xl">
+            <h3 class="font-semibold text-amber-900 mb-4">Registration Details</h3>
+            <p><strong>Date of Registration:</strong> 15th October 1997</p>
+            <p><strong>Registration No.:</strong> S-32069/1997</p>
+            <p><strong>Registered under:</strong> Societies Registration Act, XXI of 1860, New Delhi</p>
+        </div>
+
+    </div>
+</div>
+
+        <!-- Tab 2: The Hindustan Review -->
+        <div id="content1" class="tab-content hidden">
+            <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">The Hindustan Review</h2>
+                <div class="mt-6 space-y-6">
                         <p>
                             The journal is intended to serve as a forum for discussion and exposition of the various aspects of India and Buddhist learnings, and their applicability in societies of the world. 
                         </p>
@@ -65,12 +172,18 @@
                             Contributors are requested to send signed copies of their contributions in two sets (hard copy) and by email (soft copy). Publishers desiring review of their publications are requested to send two copies of their publications.
                         </p>
                     </div>
+                <div class="mt-10 bg-amber-50 border-l-4 border-amber-600 p-8 rounded-r-2xl">
+                    <p><strong>ISSN:</strong> 0972-1894</p>
+                    <p><strong>Date of Registration:</strong> 28th September 1999</p>
                 </div>
+            </div>
+        </div>
 
-                <!-- Natural Science Today Section -->
-                <div>
-                    <h2 class="text-2xl font-semibold text-gray-900 border-b border-emerald-200 pb-3">Natural Science Today</h2>
-                    <div class="mt-6 space-y-6">
+        <!-- Tab 3: Natural Science Today -->
+        <div id="content2" class="tab-content hidden">
+            <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Natural Science Today</h2>
+                <div class="mt-6 space-y-6">
                         <p>
                             <strong>Natural Science Today</strong> is a peer-reviewed, international and multidisciplinary journal dedicated to publishing high-quality research in all areas of natural sciences including Physics, Chemistry, Biology, Environmental Science, Mathematics, Earth Sciences, and emerging interdisciplinary fields.
                         </p>
@@ -84,80 +197,120 @@
                             Contributions are invited from scholars engaged in fundamental and applied research. Authors are requested to submit their manuscripts in proper format as per the journal guidelines. Publishers and authors desiring book reviews or special issues may contact the editorial office.
                         </p>
                     </div>
+                <div class="mt-10 bg-amber-50 border-l-4 border-amber-600 p-8 rounded-r-2xl">
+                    <p><strong>ISSN:</strong> 0972-1908</p>
+                    <p><strong>Date of Registration:</strong> 28th September 1999</p>
                 </div>
-
-                <h2 class="text-2xl font-semibold text-gray-900">Our Values</h2>
-                <ul class="list-disc pl-6 space-y-3">
-                    <li><strong>Academic Integrity:</strong> Strict peer-review process and ethical publishing standards.</li>
-                    <li><strong>Open Access:</strong> Making research freely available to scholars worldwide.</li>
-                    <li><strong>Inclusivity:</strong> Encouraging contributions from researchers across India and abroad.</li>
-                    <li><strong>Timeliness:</strong> Ensuring efficient review and publication process.</li>
-                </ul>
-
-                <h2 class="text-2xl font-semibold text-gray-900">Publisher Information</h2>
-                <p>
-                    Published by <strong>Buddhist Centre for Action Research and Development Studies (BCARDS)</strong>, Patna, Bihar. The organization is committed to educational development and research promotion in eastern India.
-                </p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-950 text-white mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid md:grid-cols-3 gap-8 text-sm">
-                <div>
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-xs">THR</div>
-                        <span class="font-semibold text-lg">The Hindustan Review and Natural Science Today</span>
-                    </div>
-                    <p class="text-gray-400 leading-relaxed">A peer-reviewed, international, open-access academic publication advancing research across Social Sciences, Humanities and Natural Sciences.</p>
+    <!-- ============================================================ -->
+    <!--  FOOTER                                                       -->
+    <!-- ============================================================ -->
+    <footer class="bg-gray-950 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid md:grid-cols-3 gap-8 text-base"> <!-- Increased from text-sm -->
+            
+            <!-- Brand & Mission -->
+            <div>
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-9 h-9 rounded-xl bg-amber-600 flex items-center justify-center font-bold text-lg text-white">B</div>
+                    <span class="font-bold text-xl">BCARDS</span>
                 </div>
-
-                <div>
-                    <h4 class="font-semibold mb-4 text-gray-200 uppercase tracking-wider text-xs">Quick Links</h4>
-                    <div class="space-y-2 text-gray-400">
-                        <a href="index.html" class="block hover:text-white transition">Home</a>
-                        <a href="about.html" class="block hover:text-white transition">About Us</a>
-                        <a href="journals.html" class="block hover:text-white transition">Journals</a>
-                        <a href="editorial.html" class="block hover:text-white transition">Editorial Board</a>
-                        <a href="guidelines.html" class="block hover:text-white transition">Guidelines & Policies</a>
-                        <a href="contact.html" class="block hover:text-white transition">Contact Us</a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="font-semibold mb-4 text-gray-200 uppercase tracking-wider text-xs">Get in Touch</h4>
-                    <div class="space-y-4 text-gray-400">
-                        <div class="flex gap-3">
-                            <svg class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            <span>BCARDS, Back of H.P. Yadav House, Near Kacchi Talab, Saristabad Road, Gardanibagh, Patna - 800001</span>
-                        </div>
-                        <div class="flex gap-3">
-                            <svg class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                            <div>
-                                <a href="tel:+919835291474" class="hover:text-white transition block">+91-9835291474</a>
-                                <a href="tel:+919334647626" class="hover:text-white transition block">+91-9334647626</a>
-                            </div>
-                        </div>
-                        <div class="flex gap-3">
-                            <svg class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            <a href="mailto:thehindustanreview@gmail.com" class="hover:text-white transition">thehindustanreview@gmail.com</a>
-                        </div>
-                    </div>
+                <p class="text-gray-300 font-medium mb-2">Buddhist Centre for Action Research and Development Studies</p>
+                <p class="text-gray-400 text-sm leading-relaxed mb-3">
+                    Regd. Under Societies Registration Act. XXI of 1860 New Delhi — S-32069/97
+                </p>
+                <p class="text-gray-400 text-sm leading-relaxed italic">
+                    "A high level research publication and counselling institute devoted to multi-disciplinary studies in different branches of Indian and Buddhist Learning!"
+                </p>
+                <div class="mt-6 flex gap-2 text-sm">
+                    <span class="px-3 py-1 rounded-full border border-gray-700 text-gray-400">The Hindustan Review</span>
+                    <span class="px-3 py-1 rounded-full border border-gray-700 text-gray-400">Natural Science Today</span>
                 </div>
             </div>
 
-            <div class="border-t border-white/10 mt-8 pt-6 text-center text-xs text-gray-500">
-                &copy; 2026 The Hindustan Review - Natural Science Today. All rights reserved.
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-semibold mb-5 text-gray-200 uppercase tracking-wider text-sm">Quick Links</h4>
+                <div class="space-y-3 text-gray-300">
+                    <a href="index.html" class="block hover:text-white transition">Home</a>
+                    <a href="about.html" class="block hover:text-white transition">About Us</a>
+                    <a href="mission.html" class="block hover:text-white transition">Mission & Vision</a>
+                    <a href="activities.html" class="block hover:text-white transition">Activities & Objectives</a>
+                    <a href="journals.html" class="block hover:text-white transition">Journals</a>
+                    <a href="editorial.html" class="block hover:text-white transition">Editorial Board</a>
+                    <a href="guidelines.html" class="block hover:text-white transition">Guidelines &amp; Policies</a>
+                    <a href="contact.html" class="block hover:text-white transition">Contact Us</a>
+                </div>
+            </div>
+
+            <!-- Contact Details -->
+            <div>
+                <h4 class="font-semibold mb-5 text-gray-200 uppercase tracking-wider text-sm">Get in Touch</h4>
+                <div class="space-y-5 text-gray-300">
+                    <div class="flex gap-4">
+                        <svg class="w-5 h-5 text-amber-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <span>BCARDS, Back of H.P. Yadav House, Near Kacchi Talab, Saristabad Road, Gardanibagh, Patna - 800001</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <svg class="w-5 h-5 text-amber-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                        <div>
+                            <a href="tel:+919835291474" class="hover:text-white transition block">+91-9835291474</a>
+                            <a href="tel:+919334647626" class="hover:text-white transition block">+91-9334647626</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <svg class="w-5 h-5 text-amber-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <a href="mailto:reviewhindustan51@gmail.com" class="hover:text-white transition">reviewhindustan51@gmail.com</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+
+        <div class="border-t border-white/10 mt-12 pt-6 text-center text-sm text-gray-400">
+            © 2026 BCARDS — Buddhist Centre for Action Research and Development Studies. All rights reserved.
+        </div>
+    </div>
+</footer>
 
     <script>
-        // Mobile Menu Toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        // Mobile Menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
             document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth Tab Switching
+        function switchTab(tabIndex) {
+            // Update active tab button
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('tab' + tabIndex).classList.add('active');
+
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            // Show selected content
+            const activeContent = document.getElementById('content' + tabIndex);
+            if (activeContent) {
+                activeContent.classList.remove('hidden');
+            }
+        }
+
+        // Initialize first tab
+        document.addEventListener('DOMContentLoaded', () => {
+            switchTab(0);
         });
     </script>
 </body>
