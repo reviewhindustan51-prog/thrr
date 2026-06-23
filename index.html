@@ -3,6 +3,621 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCARDS — Buddhist Centre for Action Research and Development Studies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .font-cormorant { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
+
+        /* Dharma wheel slow rotation */
+        @keyframes dharmachakra { to { transform: rotate(360deg); } }
+        .wheel-spin {
+            animation: dharmachakra 80s linear infinite;
+            transform-box: fill-box;
+            transform-origin: center;
+        }
+        @media (prefers-reduced-motion: reduce) { .wheel-spin { animation: none; } }
+
+        /* Subtle fade-in for hero text */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up-1 { animation: fadeUp 0.8s ease forwards 0.2s; opacity: 0; }
+        .fade-up-2 { animation: fadeUp 0.8s ease forwards 0.5s; opacity: 0; }
+        .fade-up-3 { animation: fadeUp 0.8s ease forwards 0.8s; opacity: 0; }
+        .fade-up-4 { animation: fadeUp 0.8s ease forwards 1.1s; opacity: 0; }
+        @media (prefers-reduced-motion: reduce) {
+            .fade-up-1, .fade-up-2, .fade-up-3, .fade-up-4 { animation: none; opacity: 1; }
+        }
+
+        /* Bounce for scroll indicator */
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(6px); }
+        }
+        .scroll-bounce { animation: scrollBounce 1.8s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-white text-gray-700 font-sans leading-relaxed">
+
+    <!-- ============================================================ -->
+<!--  NAVIGATION - Clean & Compact                                -->
+<!-- ============================================================ -->
+<nav class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            
+            <!-- Brand -->
+            <a href="index.html" class="flex items-center gap-3.5 shrink-0">
+                <div class="w-9 h-9 rounded-2xl bg-amber-600 flex items-center justify-center font-bold text-2xl text-white shadow-inner">
+                    B
+                </div>
+                <div>
+                    <div class="text-xl font-bold tracking-tight text-amber-100">BCARDS</div>
+                    <div class="text-[10px] text-amber-400 tracking-widest -mt-0.5">Buddhist Centre for Action Research</div>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-1 text-[15px] font-medium">
+                <a href="index.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Home</a>
+                <a href="about.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">About</a>
+                <a href="mission.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Mission & Vision</a>
+                <a href="activities.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Activities & Objectives</a>
+                <a href="journals.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Journals</a>
+                <a href="editorial.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Editorial Board</a>
+                <a href="guidelines.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Guidelines</a>
+                <a href="contact.html" class="nav-link px-5 py-2.5 rounded-xl hover:bg-white/10 transition">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden p-3 rounded-2xl hover:bg-white/10 transition">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 pb-6">
+        <div class="max-w-7xl mx-auto px-4 space-y-1 text-base">
+            <a href="index.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Home</a>
+            <a href="about.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">About</a>
+            <a href="mission.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Mission & Vision</a>
+            <a href="activities.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Activities & Objectives</a>
+            <a href="journals.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Journals</a>
+            <a href="editorial.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Editorial Board</a>
+            <a href="guidelines.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Guidelines & Policies</a>
+            <a href="contact.html" class="block px-6 py-4 rounded-xl hover:bg-white/10">Contact</a>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- ============================================================ -->
+    <!--  HERO — full viewport, dark warm background, dharma wheel    -->
+    <!-- ============================================================ -->
+    <section class="relative min-h-screen flex items-center justify-center bg-[#0E0B06] text-white overflow-hidden">
+
+        <!-- Ambient glow layers -->
+        <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-amber-800 rounded-full blur-[160px] opacity-20"></div>
+            <div class="absolute top-16 right-16 w-72 h-72 bg-amber-900 rounded-full blur-3xl opacity-10"></div>
+            <div class="absolute bottom-24 left-16 w-80 h-80 bg-amber-950 rounded-full blur-3xl opacity-15"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center py-20">
+
+            <!-- ── Dharma Wheel (dharmachakra) ── -->
+            <!-- Signature element: hand-drawn 8-spoke wheel; slow 80s rotation -->
+            <div class="flex justify-center mb-10">
+                <svg viewBox="0 0 160 160"
+                     xmlns="http://www.w3.org/2000/svg"
+                     class="w-36 h-36 sm:w-44 sm:h-44"
+                     style="filter: drop-shadow(0 0 32px rgba(217,119,6,0.45))"
+                     aria-label="Dharmachakra — Wheel of Dharma">
+                    <defs>
+                        <radialGradient id="wheelGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%"   stop-color="#92400E" stop-opacity="0.35"/>
+                            <stop offset="100%" stop-color="#0E0B06" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+                    <!-- Static ambient fill -->
+                    <circle cx="80" cy="80" r="72" fill="url(#wheelGlow)"/>
+                    <!-- Spinning group: all wheel elements rotate together -->
+                    <g class="wheel-spin">
+                        <!-- Outer rim -->
+                        <circle cx="80" cy="80" r="72" fill="none" stroke="#D97706" stroke-width="2.5"/>
+                        <!-- Decorative inner ring (traditional nave circle) -->
+                        <circle cx="80" cy="80" r="50" fill="none" stroke="#D97706" stroke-width="1.5" opacity="0.55"/>
+                        <!-- Hub outer circle -->
+                        <circle cx="80" cy="80" r="12" fill="#D97706"/>
+                        <!-- Hub inner recess (dark eye) -->
+                        <circle cx="80" cy="80" r="6.5" fill="#0E0B06"/>
+                        <!-- Hub centre dot -->
+                        <circle cx="80" cy="80" r="2.5" fill="#FCD34D"/>
+                        <!-- 8 spokes: from hub edge (r=12) to inner ring (r=50) -->
+                        <!-- Coordinates pre-computed for center (80,80) -->
+                        <g stroke="#D97706" stroke-width="2.2" stroke-linecap="round">
+                            <!-- 0° right -->
+                            <line x1="92" y1="80" x2="130" y2="80"/>
+                            <!-- 45° bottom-right -->
+                            <line x1="88.49" y1="88.49" x2="115.36" y2="115.36"/>
+                            <!-- 90° down -->
+                            <line x1="80" y1="92" x2="80" y2="130"/>
+                            <!-- 135° bottom-left -->
+                            <line x1="71.51" y1="88.49" x2="44.64" y2="115.36"/>
+                            <!-- 180° left -->
+                            <line x1="68" y1="80" x2="30" y2="80"/>
+                            <!-- 225° top-left -->
+                            <line x1="71.51" y1="71.51" x2="44.64" y2="44.64"/>
+                            <!-- 270° up -->
+                            <line x1="80" y1="68" x2="80" y2="30"/>
+                            <!-- 315° top-right -->
+                            <line x1="88.49" y1="71.51" x2="115.36" y2="44.64"/>
+                        </g>
+                        <!-- Gold accent dots at outer rim (8 positions, r=72) -->
+                        <g fill="#FCD34D">
+                            <circle cx="152"    cy="80"     r="3.5"/><!-- 0° -->
+                            <circle cx="130.91" cy="130.91" r="3.5"/><!-- 45° -->
+                            <circle cx="80"     cy="152"    r="3.5"/><!-- 90° -->
+                            <circle cx="29.09"  cy="130.91" r="3.5"/><!-- 135° -->
+                            <circle cx="8"      cy="80"     r="3.5"/><!-- 180° -->
+                            <circle cx="29.09"  cy="29.09"  r="3.5"/><!-- 225° -->
+                            <circle cx="80"     cy="8"      r="3.5"/><!-- 270° -->
+                            <circle cx="130.91" cy="29.09"  r="3.5"/><!-- 315° -->
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Acronym -->
+            <h1 class="font-cormorant text-7xl sm:text-8xl lg:text-9xl font-bold text-amber-100 tracking-widest leading-none mb-3 fade-up-1">
+                BCARDS
+            </h1>
+
+            <!-- Full institute name -->
+            <h2 class="font-cormorant text-xl sm:text-2xl text-amber-300/90 font-normal leading-snug mb-8 max-w-lg mx-auto fade-up-2">
+                Buddhist Centre for Action Research<br class="hidden sm:block"> and Development Studies
+            </h2>
+
+            <!-- Decorative rule with dot -->
+            <div class="flex items-center gap-4 max-w-[200px] mx-auto mb-8 fade-up-3">
+                <div class="flex-1 h-px bg-amber-700/60"></div>
+                <svg viewBox="0 0 12 12" class="w-2.5 h-2.5 text-amber-500 shrink-0" fill="currentColor"><circle cx="6" cy="6" r="4"/></svg>
+                <div class="flex-1 h-px bg-amber-700/60"></div>
+            </div>
+
+            <!-- Tagline / description -->
+            <p class="font-cormorant text-xl sm:text-[1.35rem] text-stone-300 italic leading-relaxed mb-7 max-w-2xl mx-auto fade-up-3">
+                "A high level research publication and counselling institute devoted to multi-disciplinary studies in different branches of Indian and Buddhist Learning!"
+            </p>
+
+            <!-- Registration badge -->
+            <div class="inline-flex items-center gap-2 bg-amber-950/70 border border-amber-700/40 rounded-full px-5 py-2 text-[11px] text-amber-300 tracking-wide mb-10 fade-up-3">
+                <svg class="w-3.5 h-3.5 text-amber-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+                Regd. Under Societies Registration Act. XXI of 1860 New Delhi &nbsp;—&nbsp; S&#8209;32069/97
+            </div>
+
+            <!-- CTA buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-up-4">
+                <a href="journals.html"
+                   class="w-full sm:w-auto bg-amber-600 hover:bg-amber-500 active:bg-amber-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-amber-900/40 text-base text-center">
+                    Browse Our Journals →
+                </a>
+                <a href="guidelines.html"
+                   class="w-full sm:w-auto border border-amber-700/60 hover:border-amber-500/80 hover:bg-amber-950/40 text-amber-200 font-medium px-8 py-4 rounded-xl transition-all duration-200 text-base text-center">
+                    Submission Guidelines
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-amber-700/70 pointer-events-none">
+            <span class="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
+            <svg class="w-4 h-4 scroll-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+        </div>
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!--  REGISTRATION INFO STRIP                                     -->
+    <!-- ============================================================ -->
+    <section class="bg-amber-600 text-white py-3">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-1 text-sm font-medium text-amber-50">
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4 opacity-80 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                    </svg>
+                    Registered Academic Institute
+                </span>
+                <span class="opacity-50 hidden sm:inline">·</span>
+                <span>Societies Registration Act. XXI of 1860 &nbsp;|&nbsp; Reg. No. S&#8209;32069/97</span>
+                <span class="opacity-50 hidden sm:inline">·</span>
+                <span class="flex items-center gap-1.5">
+                    <svg class="w-4 h-4 opacity-80 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    Patna, Bihar, India
+                </span>
+                <span class="opacity-50 hidden sm:inline">·</span>
+                <span>2 Peer-Reviewed Journals</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!--  ABOUT BCARDS                                                 -->
+    <!-- ============================================================ -->
+    <section class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+                <!-- Left: narrative text -->
+                <div>
+                    <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">About the Institute</span>
+                    <h2 class="font-cormorant text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-6 leading-tight">
+                        Devoted to Indian &amp;<br>Buddhist Learning
+                    </h2>
+                    <div class="space-y-4 text-gray-600 leading-relaxed text-[1.05rem]">
+                        <p>BCARDS — the Buddhist Centre for Action Research and Development Studies — is a registered academic institute dedicated to promoting high-level scholarly research and counselling across the broad continuum of Indian and Buddhist learning.</p>
+                        <p>Established and registered under the Societies Registration Act (XXI of 1860, New Delhi; S&#8209;32069/97), the Centre has consistently championed interdisciplinary inquiry, bringing together researchers, educators, and scholars from across India and the world.</p>
+                        <p>Through its two flagship peer-reviewed publications, BCARDS advances knowledge spanning the humanities, social sciences, and natural sciences — nurturing academic discourse rooted in India's rich civilisational heritage while embracing the full scope of contemporary inquiry.</p>
+                    </div>
+                    <div class="mt-8 p-5 bg-amber-50 border-l-4 border-amber-500 rounded-r-xl">
+                        <p class="font-cormorant text-xl text-amber-900 italic leading-relaxed">
+                            "A high level research publication and counselling institute devoted to multi-disciplinary studies in different branches of Indian and Buddhist Learning!"
+                        </p>
+                    </div>
+                    <a href="about.html" class="inline-flex items-center gap-2 mt-8 text-amber-700 hover:text-amber-600 font-semibold transition-colors">
+                        Learn More About BCARDS →
+                    </a>
+                </div>
+
+                <!-- Right: feature pillars -->
+                <div class="space-y-4 lg:pt-6">
+                    <div class="flex gap-5 p-5 bg-white rounded-2xl shadow-sm border border-amber-100 hover:border-amber-300 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Multi-disciplinary Research</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Advancing scholarship across Indian studies, Buddhist philosophy, social sciences, and natural sciences under one scholarly roof.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 p-5 bg-white rounded-2xl shadow-sm border border-amber-100 hover:border-amber-300 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">International Open Access</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Both journals are open-access, reaching scholars and researchers worldwide without subscription barriers.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 p-5 bg-white rounded-2xl shadow-sm border border-amber-100 hover:border-amber-300 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Rigorous Double-Blind Peer Review</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">All submissions undergo a double-blind peer review process, ensuring academic integrity and scholarly excellence.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 p-5 bg-white rounded-2xl shadow-sm border border-amber-100 hover:border-amber-300 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Research Counselling &amp; Guidance</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Beyond publication, BCARDS offers academic counselling and mentorship to researchers at every stage of their scholarly journey.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!--  OUR JOURNALS                                                 -->
+    <!-- ============================================================ -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Our Publications</span>
+                <h2 class="font-cormorant text-4xl md:text-5xl font-bold text-gray-900 mt-3">Peer-Reviewed Journals</h2>
+                <p class="text-gray-500 mt-3 max-w-xl mx-auto">Two flagship open-access journals publishing original research for an international scholarly readership</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+
+                <!-- The Hindustan Review -->
+                <div class="bg-white rounded-3xl shadow-sm overflow-hidden hover:shadow-xl transition-shadow duration-300 group border border-gray-100">
+                    <div class="aspect-[3/4] bg-gradient-to-b from-blue-50 to-gray-100 relative flex items-center justify-center border-b border-gray-100">
+                        <img src="images/thr-cover.jpg"
+                             alt="The Hindustan Review Journal Cover"
+                             class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 text-blue-700 text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                            Humanities &amp; Social Sciences
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-7 h-7 rounded bg-blue-600 flex items-center justify-center text-white font-bold text-[10px]">THR</div>
+                            <span class="text-[10px] text-gray-400 uppercase tracking-wider font-medium">A BCARDS Publication</span>
+                        </div>
+                        <h3 class="font-cormorant text-2xl font-bold text-gray-900 mb-2">The Hindustan Review</h3>
+                        <p class="text-gray-600 text-[0.95rem] leading-relaxed">
+                            A multidisciplinary, international journal exploring Indian culture, Buddhist studies, history, politics, literature, and social issues.
+                        </p>
+                        <a href="journals.html#humanities" class="mt-6 inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors">
+                            View All Issues →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Natural Science Today -->
+                <div class="bg-white rounded-3xl shadow-sm overflow-hidden hover:shadow-xl transition-shadow duration-300 group border border-gray-100">
+                    <div class="aspect-[3/4] bg-gradient-to-b from-emerald-50 to-gray-100 relative flex items-center justify-center border-b border-gray-100">
+                        <img src="images/nst-cover.jpg"
+                             alt="Natural Science Today Journal Cover"
+                             class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                            Natural Sciences
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-7 h-7 rounded bg-emerald-600 flex items-center justify-center text-white font-bold text-[10px]">NST</div>
+                            <span class="text-[10px] text-gray-400 uppercase tracking-wider font-medium">A BCARDS Publication</span>
+                        </div>
+                        <h3 class="font-cormorant text-2xl font-bold text-gray-900 mb-2">Natural Science Today</h3>
+                        <p class="text-gray-600 text-[0.95rem] leading-relaxed">
+                            Cutting-edge international, peer-reviewed research in Physics, Chemistry, Biology, Environmental Science, Mathematics &amp; allied fields.
+                        </p>
+                        <a href="journals.html#science" class="mt-6 inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium transition-colors">
+                            View All Issues →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!--  RESEARCH FOCUS AREAS                                        -->
+    <!-- ============================================================ -->
+    <section class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Scope of Inquiry</span>
+                <h2 class="font-cormorant text-4xl md:text-5xl font-bold text-gray-900 mt-3">Research Focus Areas</h2>
+                <p class="text-gray-500 mt-3 max-w-xl mx-auto">BCARDS fosters scholarship across a wide spectrum of disciplines rooted in Indian and global traditions of knowledge</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- 1. Buddhist Studies -->
+                <div class="bg-white rounded-2xl p-7 border border-amber-100 hover:border-amber-400 hover:shadow-md transition-all duration-200 group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 group-hover:bg-amber-100 flex items-center justify-center text-amber-600 mb-5 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="4" stroke-width="2"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1M4.22 4.22l.707.707M18.364 18.364l.707.707M1 12h1M21 12h1M4.22 19.78l.707-.707M18.364 5.636l.707-.707"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2 text-lg">Buddhist Studies &amp; Philosophy</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Buddhist thought, Pali and Sanskrit texts, Dharma traditions, Theravada and Mahayana scholarship, and comparative religion.</p>
+                </div>
+
+                <!-- 2. Indian History -->
+                <div class="bg-white rounded-2xl p-7 border border-amber-100 hover:border-amber-400 hover:shadow-md transition-all duration-200 group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 group-hover:bg-amber-100 flex items-center justify-center text-amber-600 mb-5 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2 text-lg">Indian History &amp; Culture</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Ancient and medieval India, archaeology, epigraphy, art history, cultural heritage, and civilisational continuity.</p>
+                </div>
+
+                <!-- 3. Social Sciences -->
+                <div class="bg-white rounded-2xl p-7 border border-amber-100 hover:border-amber-400 hover:shadow-md transition-all duration-200 group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 group-hover:bg-amber-100 flex items-center justify-center text-amber-600 mb-5 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2 text-lg">Social Sciences &amp; Policy</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Sociology, political science, economics, public policy, development studies, and governance research.</p>
+                </div>
+
+                <!-- 4. Arts & Literature -->
+                <div class="bg-white rounded-2xl p-7 border border-amber-100 hover:border-amber-400 hover:shadow-md transition-all duration-200 group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 group-hover:bg-amber-100 flex items-center justify-center text-amber-600 mb-5 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2 text-lg">Arts, Literature &amp; Language</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Literary criticism, Hindi and Indian languages, classical texts, folk traditions, aesthetics, and cultural expression.</p>
+                </div>
+
+                <!-- 5. Natural Sciences (blue accent) -->
+                <div class="bg-white rounded-2xl p-7 border border-blue-100 hover:border-blue-400 hover:shadow-md transition-all duration-200 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 group-hover:bg-blue-100 flex items-center justify-center text-blue-600 mb-5 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2 text-lg">Natural Sciences</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Physics, Chemistry, Biology, Environmental Science, Mathematics, and allied natural and applied sciences.</p>
+                </div>
+
+                <!-- 6. Research Counselling -->
+                <div class="bg-white rounded-2xl p-7 border border-amber-100 hover:border-amber-400 hover:shadow-md transition-all duration-200 group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 group-hover:bg-amber-100 flex items-center justify-center text-amber-600 mb-5 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2 text-lg">Research Counselling</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Academic mentorship, thesis guidance, research design support, and scholarly development for emerging researchers.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!--  SUBMIT YOUR WORK — dark CTA                                 -->
+    <!-- ============================================================ -->
+    <section class="py-24 bg-[#0E0B06] text-white relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-amber-900 rounded-full blur-3xl opacity-15"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-amber-950 rounded-full blur-3xl opacity-10"></div>
+        </div>
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <!-- Mini dharma wheel decoration -->
+            <div class="flex justify-center mb-6">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 opacity-60" aria-hidden="true">
+                    <circle cx="20" cy="20" r="18" fill="none" stroke="#D97706" stroke-width="1.5"/>
+                    <circle cx="20" cy="20" r="3" fill="#D97706"/>
+                    <g stroke="#D97706" stroke-width="1.2" stroke-linecap="round" opacity="0.8">
+                        <line x1="20" y1="17" x2="20" y2="5"/>
+                        <line x1="20" y1="23" x2="20" y2="35"/>
+                        <line x1="17" y1="20" x2="5" y2="20"/>
+                        <line x1="23" y1="20" x2="35" y2="20"/>
+                        <line x1="17.88" y1="17.88" x2="9.39" y2="9.39"/>
+                        <line x1="22.12" y1="22.12" x2="30.61" y2="30.61"/>
+                        <line x1="22.12" y1="17.88" x2="30.61" y2="9.39"/>
+                        <line x1="17.88" y1="22.12" x2="9.39" y2="30.61"/>
+                    </g>
+                </svg>
+            </div>
+            <span class="text-amber-500 font-semibold text-sm uppercase tracking-wider">Submit Your Research</span>
+            <h2 class="font-cormorant text-4xl md:text-5xl font-bold text-amber-100 mt-3 mb-6 leading-tight">
+                Share Your Scholarship<br class="hidden sm:block"> with the World
+            </h2>
+            <p class="text-stone-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+                We welcome original research across all disciplines covered by our journals. All submissions undergo rigorous double-blind peer review and are published open-access for a global readership.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="guidelines.html"
+                   class="w-full sm:w-auto bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-amber-900/40 text-base">
+                    View Submission Guidelines →
+                </a>
+                <a href="mailto:thehindustanreview@gmail.com"
+                   class="w-full sm:w-auto border border-amber-800/60 hover:border-amber-600 hover:bg-amber-950/40 text-amber-300 font-medium px-8 py-4 rounded-xl transition-all duration-200 text-base inline-flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    Email Us Directly
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================ -->
+    <!--  FOOTER                                                       -->
+    <!-- ============================================================ -->
+    <footer class="bg-gray-950 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid md:grid-cols-3 gap-8 text-base"> <!-- Increased from text-sm -->
+            
+            <!-- Brand & Mission -->
+            <div>
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-9 h-9 rounded-xl bg-amber-600 flex items-center justify-center font-bold text-lg text-white">B</div>
+                    <span class="font-bold text-xl">BCARDS</span>
+                </div>
+                <p class="text-gray-300 font-medium mb-2">Buddhist Centre for Action Research and Development Studies</p>
+                <p class="text-gray-400 text-sm leading-relaxed mb-3">
+                    Regd. Under Societies Registration Act. XXI of 1860 New Delhi — S-32069/97
+                </p>
+                <p class="text-gray-400 text-sm leading-relaxed italic">
+                    "A high level research publication and counselling institute devoted to multi-disciplinary studies in different branches of Indian and Buddhist Learning!"
+                </p>
+                <div class="mt-6 flex gap-2 text-sm">
+                    <span class="px-3 py-1 rounded-full border border-gray-700 text-gray-400">The Hindustan Review</span>
+                    <span class="px-3 py-1 rounded-full border border-gray-700 text-gray-400">Natural Science Today</span>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-semibold mb-5 text-gray-200 uppercase tracking-wider text-sm">Quick Links</h4>
+                <div class="space-y-3 text-gray-300">
+                    <a href="index.html" class="block hover:text-white transition">Home</a>
+                    <a href="about.html" class="block hover:text-white transition">About Us</a>
+                    <a href="mission.html" class="block hover:text-white transition">Mission & Vision</a>
+                    <a href="activities.html" class="block hover:text-white transition">Activities & Objectives</a>
+                    <a href="journals.html" class="block hover:text-white transition">Journals</a>
+                    <a href="editorial.html" class="block hover:text-white transition">Editorial Board</a>
+                    <a href="guidelines.html" class="block hover:text-white transition">Guidelines &amp; Policies</a>
+                    <a href="contact.html" class="block hover:text-white transition">Contact Us</a>
+                </div>
+            </div>
+
+            <!-- Contact Details -->
+            <div>
+                <h4 class="font-semibold mb-5 text-gray-200 uppercase tracking-wider text-sm">Get in Touch</h4>
+                <div class="space-y-5 text-gray-300">
+                    <div class="flex gap-4">
+                        <svg class="w-5 h-5 text-amber-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <span>BCARDS, Back of H.P. Yadav House, Near Kacchi Talab, Saristabad Road, Gardanibagh, Patna - 800001</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <svg class="w-5 h-5 text-amber-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                        <div>
+                            <a href="tel:+919835291474" class="hover:text-white transition block">+91-9835291474</a>
+                            <a href="tel:+919334647626" class="hover:text-white transition block">+91-9334647626</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <svg class="w-5 h-5 text-amber-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <a href="mailto:reviewhindustan51@gmail.com" class="hover:text-white transition">reviewhindustan51@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 mt-12 pt-6 text-center text-sm text-gray-400">
+            © 2026 BCARDS — Buddhist Centre for Action Research and Development Studies. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Hindustan Review</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
